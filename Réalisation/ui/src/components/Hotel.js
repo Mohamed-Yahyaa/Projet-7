@@ -6,7 +6,7 @@ import { SelectedHotel, ShowHotel } from './ShowHotel';
 import { Searchh } from './Searchh';
 
 function Hotel() {
-    const [message, setMessage] = useState('The item exist already ..!!');
+    const [message, setMessage] = useState('');
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
@@ -15,7 +15,7 @@ function Hotel() {
     
     const fetchData = async() =>{
         setLoading(true)
-        const res = await axios.get('https://travel-advisor.p.rapidapi.com/locations/v2/auto-complete')
+        const res = await axios.get('https://catfact.ninja/fact')
         setData(res.data.Hotel)
         setLoading(false)
        
