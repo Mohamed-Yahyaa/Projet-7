@@ -1,1 +1,1 @@
-# Projet-7
+# Projet-7-Gestion-Favoris
