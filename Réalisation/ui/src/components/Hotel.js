@@ -31,8 +31,8 @@ function Hotel() {
 
     //selectHotel
     const selectHotel=(item)=>{
-        console.log(item.strMeal)
-        if(dataSelected.length == 0 || !dataSelected.find((e) => e.strMeal == item.strMeal)){
+        console.log(item)
+        if(dataSelected.length == 0 || !dataSelected.find((e) => e.name == item.name)){
             axios.post('http://127.0.0.1:8000/api/favorite', item)
             .then((res => {
                 setDataSelected([...dataSelected,res.data])
@@ -40,10 +40,9 @@ function Hotel() {
             }))
         }else{
             message()
-
         }
     }
-
+    console.log(dataSelected)
     //get selected Data
     const getData = ()=>{
         axios.get('http://127.0.0.1:8000/api/favorite').then((res=>{
@@ -56,7 +55,7 @@ function Hotel() {
     
     // deletSelectedData
     const deletSelectedHotel = (item)=>{
-        axios.delete(`http://127.0.0.1:8000//api/favorite/${item}`).then((res)=>{
+        axios.delete(`http://127.0.0.1:8000/api/favorite/${item.id}`).then((res)=>{
             getData()
         })
     }
@@ -67,7 +66,9 @@ function Hotel() {
     <div className='col-md-9'>
     <div className='row'>
  
-        <ShowHotel data={data} setData={setData}/>
+        <ShowHotel data={data} setData={setData} selectHotel={selectHotel} />
+        <SelectedHotel dataSelected={dataSelected} deletSelectedHotel={deletSelectedHotel}/>
+        
     </div>
     </div>
     {/* <div className='col-md-3'>

@@ -22,13 +22,14 @@ class FavoriteController extends Controller
         //
         $fav = Favorite::create([
 
-            'hotel_id' => $request->hotel_id,
-            'name' => $request->name,
-            'description' => $request->description, 
+            'country' => json_encode($request->country),
+            'name' => json_encode($request->name),
+            'web_pages' => json_encode($request->web_pages), 
            
         ]);
         return $fav;
     }
+    
 
     public function destroy($id)
     {

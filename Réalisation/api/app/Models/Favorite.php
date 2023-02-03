@@ -10,8 +10,8 @@ class Favorite extends Model
     use HasFactory;
     protected $table = 'favorites';
     protected $fillable = [
-        'hotel_id',
+        'country',
         'name',
-        'description',
+        'web_pages',
     ];
 }
