@@ -71,13 +71,7 @@ function Hotel() {
         
     </div>
     </div>
-    {/* <div className='col-md-3'>
-        <div className='row'>
-            <h4 className='fav'>Favorite</h4>
-       
-            
-        </div>
-    </div> */}
+
     </div>
 </div>
   )
