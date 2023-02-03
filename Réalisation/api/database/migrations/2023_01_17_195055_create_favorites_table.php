@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('favorites', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('hotel_id');
+            $table->unsignedInteger('country');
             $table->string('name');
-            $table->string('description');
+            $table->string('web_pages');
             $table->timestamps();
         });
     }
