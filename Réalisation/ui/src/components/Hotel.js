@@ -61,19 +61,14 @@ function Hotel() {
     }
 
   return (
-    <div className='container'>
-    <div className='row'>
-    <div className='col-md-9'>
-    <div className='row'>
+  
  
-        <ShowHotel data={data} setData={setData} selectHotel={selectHotel} />
-        <SelectedHotel dataSelected={dataSelected} deletSelectedHotel={deletSelectedHotel}/>
-        
-    </div>
-    </div>
+        <><ShowHotel data={data} setData={setData} selectHotel={selectHotel} />
 
-    </div>
-</div>
+        
+        <SelectedHotel dataSelected={dataSelected} deletSelectedHotel={deletSelectedHotel} /></>
+        
+
   )
 }
 
