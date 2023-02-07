@@ -59,7 +59,7 @@
     font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
-    padding: 12px;
+    padding: 5px;
     border: none;
 }
 .panel .panel-body .table tbody tr td{
@@ -106,7 +106,7 @@
 .panel .panel-body .table tbody .action-list li a:after{
     content: '';
     height: 15px;
-    width: 15px;
+    /* width: 15px; */
     padding: 0;
     border-radius: 0;
     transform: translateX(-50%) rotate(45deg);

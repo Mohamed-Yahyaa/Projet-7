@@ -2,17 +2,17 @@ import axios from "axios";
 import React, { Fragment, useState, useEffect ,message} from 'react';
 import { Searchh } from "./Searchh";
 
-export const ShowHotel = ({data, setData,selectHotel}) => {
+export const ShowHotel = ({data, setData,selectHotel ,show, setShow}) => {
+   
   return ( 
     
     <Fragment>
         
-
-        
-        <div class="container">
     <div class="row">
-        <div class="col-md-offset-1 col-md-10">
+        <div>
             <div class="panel">
+            <button className="btn btn-outline-success" onClick={()=>{setShow(true)}}>Main menu</button>
+            <button className="btn btn-outline-success"  onClick={()=>{setShow(false)}}>Fav</button>
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col col-sm-3 col-xs-12">
@@ -24,38 +24,39 @@ export const ShowHotel = ({data, setData,selectHotel}) => {
                 </div>
                 <Searchh setData={setData} data={data}/>
                 
-                <div class="panel-body table-responsive">
-                    <table class="table">
+                <div class="panel-body table-responsive" style={{overflow: 'hidden'}}>
+                    {show && <table class="table">
                         <thead>
                             <tr>
+                                <th>Fav</th>
                                 <th>Country</th>
                                 <th>Name University</th>
                                 <th>Lein</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                         {data.map((item)=>
                             <tr>
+                                <td>
+                                   
+                                   <button className="btn btn-outline-success" onClick={()=>{selectHotel(item)}} >+</button>
+                                      
+                               </td>
                             <td>{item.country}</td>
                             <td>{item.name}</td>
-                            <td>{item.web_pages}</td>
-                            
-                                <td>
-                                    <ul class="action-list">
-                                    <button className="btn btn-outline-success" onClick={()=>{selectHotel(item)}} >+</button>
-                                        
-                                    </ul>
-                                </td>
+                            <td >{item.web_pages}</td>  
                             </tr>
                             )}
                             </tbody>
                     </table>
+                    
+                    }
+                    
                 </div>
                 </div>
         </div>
     </div>
-</div>
+
 
     
          </Fragment>
@@ -64,9 +65,10 @@ export const ShowHotel = ({data, setData,selectHotel}) => {
  
 
 
-export const SelectedHotel = ({dataSelected,deletSelectedHotel}) => {
+export const SelectedHotel = ({dataSelected,deletSelectedHotel, show}) => {
   return (
     <Fragment>
+        {!show && 
         <table className="table">
             <thead>
                 <tr>
@@ -86,7 +88,7 @@ export const SelectedHotel = ({dataSelected,deletSelectedHotel}) => {
                     </tr>
                 )}
             </tbody>
-        </table>
+        </table>}
     </Fragment>
   )
 }

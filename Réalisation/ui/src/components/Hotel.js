@@ -12,6 +12,7 @@ function Hotel() {
     const [currentPage, setCurrentPage] = useState(1)
     const [HotelPerPage, setHotelPerPage] = useState(8)
     const [dataSelected, setDataSelected] = useState([])
+    const [show, setShow] = useState(true)
     
     const fetchData = async() =>{
         setLoading(true)
@@ -63,10 +64,10 @@ function Hotel() {
   return (
   
  
-        <><ShowHotel data={data} setData={setData} selectHotel={selectHotel} />
+        <><ShowHotel data={data} setData={setData} selectHotel={selectHotel} show={show} setShow={setShow}/>
 
         
-        <SelectedHotel dataSelected={dataSelected} deletSelectedHotel={deletSelectedHotel} /></>
+        <SelectedHotel dataSelected={dataSelected} deletSelectedHotel={deletSelectedHotel} show={show} setShow={setShow}/></>
         
 
   )
