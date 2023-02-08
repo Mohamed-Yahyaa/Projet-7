@@ -163,3 +163,33 @@
     }
     .panel .panel-heading .btn_group{ text-align: center; }
 }
+
+.fav{
+    
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 15px;
+    padding: 20px;
+    
+
+}
+.dar{
+    
+    margin-right: 10px;
+}
+
+.search{
+
+    display: flex;
+   width:400px;
+    margin-left: 15px;
+ 
+
+}
+
+.sear{
+
+    display: flex;
+}

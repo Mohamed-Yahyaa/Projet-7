@@ -11,16 +11,22 @@ export const ShowHotel = ({data, setData,selectHotel ,show, setShow}) => {
     <div class="row">
         <div>
             <div class="panel">
-            <button className="btn btn-outline-success" onClick={()=>{setShow(true)}}>Main menu</button>
-            <button className="btn btn-outline-success"  onClick={()=>{setShow(false)}}>Fav</button>
+            <div class ="fav">
+           
+            <button className="btn  btn-dark dar" onClick={()=>{setShow(true)}}>Main menu</button>
+
+            <button className="btn btn-dark"  onClick={()=>{setShow(false)}}>Fav</button>
+            </div>
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col col-sm-3 col-xs-12">
                             <h4 class="title">Data <span>List</span></h4>
                         </div>
                        
-                    </div>
 
+                    
+
+            </div>
                 </div>
                 <Searchh setData={setData} data={data}/>
                 

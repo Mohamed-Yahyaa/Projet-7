@@ -11,9 +11,9 @@ export const Searchh = ({setData, data}) => {
 
 
 
-    <div class="col-sm-9 col-xs-12 text-right">
-    <div class="btn_group">
-        <input type="text" class="form-control" placeholder="Searchh"onChange={Search}/>
+    <div class="sear ">
+    <div class="btn search">
+        <input type="text" class="form-control" placeholder="Search"onChange={Search}/>
      
     </div>
 </div> 
